@@ -23,6 +23,15 @@ let newCurrentOwner = {
 
   WRITE YOUR CODE BELOW
 */
+const nCurrentOwner = newCurrentOwner
+house.currentOwner = nCurrentOwner
+
+const newPreviousOwner = "Stwphen B."
+house.previousOwners [1] = newPreviousOwner
+
+const stt = true
+house.newPrevious = stt
+console.log(Object.values(house))
 
 // - assign the value of the variable 'newCurrentOwner' as the value to the house's "currentOwner"
 // - from the list of previous owners, replace only "John A." with "Stephen B."

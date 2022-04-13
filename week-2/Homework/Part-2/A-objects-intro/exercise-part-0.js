@@ -10,4 +10,8 @@ let laptop = {
     brand: "Lenovo",
     screenSize: 13,
     isTouchscreen: true,
+    memoryRam: 8,
+    systemOperator: "windows",
+    prcesador: "core i5",
+    color: "black",
   };

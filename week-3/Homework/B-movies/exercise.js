@@ -60,8 +60,56 @@ var movies = [
 
 // create showMovies function
 
+function showMovies(movies) {
+  let moviesNumber = document.querySelector("#movies-number");
+  moviesNumber.innerText = movies.length;
+
+  movies.forEach(function (movie) {
+    let allMovies = document.querySelector("#all-movies");
+    let p = document.createElement("p");
+    allMovies.appendChild(p);
+    p.innerText = "Title: " + movie.title + " " + "Director: " + movie.director;
+  })
+}
 
 // create a new movie object for your favorite movie
 
+function addMovie(movies,text) {
+  if (text[3]==="true") {
+   movies.push({
+     title: text[0],
+     director: text[1],
+     type: text[2],
+     dresses: true,
+   })
+  } else {
+   movies.push({
+     title: text[0],
+     director: text[1],
+     type: text[2],
+     dresses: false,
+   });
+  }
+   return Object;
+ }
+ function cleaning() {
+   const part = document.querySelector("#all-movies").querySelectorAll("p+p");
+   console.log(part);
+   part.forEach((p) => {
+   p.remove();
+   });
+ }
 
 // create addMovies function
+
+let button=document.querySelector('#button')
+showMovies(movies)
+
+button.addEventListener('click',(e)=>{
+  cleaning()
+  e.preventDefault()
+  const text=Array.from(document.querySelectorAll('input[type=text]'),({value})=>value)
+  addMovie(movies,text)
+  console.log(movies);
+  showMovies(movies)
+})

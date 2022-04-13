@@ -15,6 +15,14 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+    arrayOfPeople.forEach((person) => {
+    let h1 = document.createElement("h1");
+    let h2 = document.createElement("h2");
+    content.appendChild(h1);
+    content.appendChild(h2);
+    h1.textContent = person.name;
+    h2.textContent = person.job;
+  });
 }
 
 /**
@@ -25,6 +33,18 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
+  const content = document.querySelector("#content");
+
+  const shoopingH3 = document.createElement("h3");
+  content.appendChild(shoopingH3);
+  shoopingH3.textContent = "Listado de compras";
+  
+  const shoopingUl= document.createElement("ul");
+  shopping.forEach((element) => {
+  const shoopingLi = document.createElement("li");
+  content.appendChild(shoopingLi);
+  shoopingLi.textContent = element;
+  });
   //Write your code in here
 }
 

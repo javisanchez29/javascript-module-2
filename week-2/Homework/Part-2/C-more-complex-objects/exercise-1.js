@@ -17,7 +17,13 @@ let house = {
   DO NOT EDIT ANYTHING ABOVE THIS LINE
 
   WRITE YOUR CODE BELOW
-*/
+*/ const changeAdress = '51 Berkley Road'
+   const changePreviousOwners = ["Brian M." , "Fiona S."]
+   const changeCurrentOwner = 'Montgomery'
+
+   house.adress = changeAdress
+   house.previousOwners = changePreviousOwners
+   house.currentOwner.lastName = changeCurrentOwner
 
 // - change the address of "house" to '51 Berkley Road'
 // - change the previous owners of "house" to ["Brian M.", "Fiona S."]

@@ -11,3 +11,12 @@ const studentGrades = {
   // Prints
   // TOM - 20
   // ABDUL - 19
+
+  const studentGradesV=Object.values(studentGrades)
+  const studentGradesK=Object.keys(studentGrades)
+
+  const i = studentGradesV.filter(function(studentGrades){
+    return studentGrades>18
+  }) 
+
+  console.log(i+studentGradesK);
