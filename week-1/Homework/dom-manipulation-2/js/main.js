@@ -1,47 +1,58 @@
-const blueBtn = document.querySelector("#blueBtn")
-blueBtn.addEventListener("click", function () {
+const jumButtom = document.querySelector('.jumbotron')
+const primaryButtom = document.querySelector('.btn-lrg')
+const secundaryButtom = document.querySelector('.btn-secondary')
+console.log(primaryButtom);
 
-  const jumboTron = document.querySelector(".jumbotron")
-  jumboTron.style.backgroundColor = "#588fbd"
+const blueButton = document.querySelector('#blueBtn')
+blueButton.addEventListener('click',()=>{
+    jumButtom.style.backgroundColor = '#588fbd'
+    primaryButtom.style.backgroundColor = '#ffa500'
+    secundaryButtom.style.backgroundColor = 'black'
+    secundaryButtom.style.color = 'white'
+} )
 
-  const donateButton = document.querySelector(".buttons").querySelector(".btn")
-  donateButton.style.backgroundColor = "#ffa500"
+const orangeButton = document.querySelector('#orangeBtn')
+orangeButton.addEventListener('click',()=>{
+    jumButtom.style.backgroundColor = '#f0ad4e'
+    primaryButtom.style.backgroundColor = '#5751fd'
+    secundaryButtom.style.backgroundColor = '#31b0d5'
+    secundaryButtom.style.color = 'white'
+} )
 
-  const donateVolunteer = document
-  .querySelector(".buttons")
-  .querySelector(".btn:nth-child(2)")
-  donateVolunteer.style.backgroundColor = "black"
-  donateVolunteer.style.color = "white"
-})
+const greenButton = document.querySelector('#greenBtn')
+greenButton.addEventListener('click',()=>{
+    jumButtom.style.backgroundColor = '#87ca8a'
+    primaryButtom.style.backgroundColor = 'black'
+    secundaryButtom.style.backgroundColor = '#8c9c08'
+} )
 
-const orangeBtn = document.querySelector("#orangeBtn")
-orangeBtn.addEventListener("click", function () {
-  
-  const jumboTron = document.querySelector(".jumbotron")
-  jumboTron.style.backgroundColor = "#f0ad4e"
+const formulario = document.querySelector('form')
 
-  const donateButton = document.querySelector(".buttons").querySelector(".btn")
-  donateButton.style.backgroundColor = "#5751fd"
-  
-  const donateVolunteer = document
-  .querySelector(".buttons")
-  .querySelector(".btn:nth-child(2)")
-  donateVolunteer.style.backgroundColor = "#31b0d5"
-  donateVolunteer.style.color = "white"
-})
+const emailInput= document.querySelector('#exampleInputEmail1')
+const nameInput= document.querySelector('#example-text-input')
+const descriptionInput= document.querySelector('#exampleTextarea')
+const verificarInputs = (input) => input.value.length == 0  
 
-const greenBtn = document.querySelector("#greenBtn")
-greenBtn.addEventListener("click", function () {
-  
-  const jumboTron = document.querySelector(".jumbotron")
-  jumboTron.style.backgroundColor = "#87ca8a"
-
-  const donateButton = document.querySelector(".buttons").querySelector(".btn")
-  donateButton.style.backgroundColor = "black"
-
-  const donateVolunteer = document
-  .querySelector(".buttons")
-  .querySelector(".btn:nth-child(2)")
-  donateVolunteer.style.backgroundColor = "#8c9c08"
+formulario.addEventListener('submit',(e) => {
+    e.preventDefault()
+if (!verificarInputs(emailInput) && !verificarInputs(nameInput) && !verificarInputs(descriptionInput) && emailInput.value.includes('@')) {
+      const inputs = [emailInput,nameInput,descriptionInput]
+       inputs.forEach((input)=> {
+           input.style.backgroundColor = 'white'
+           input.value = ''
+  } ) 
+    alert('thank you for filling out the form')
+  } 
+    else {
+    if (verificarInputs(emailInput) || !emailInput.value.includes('@')) {
+        emailInput.style.backgroundColor = 'red'
+    }
+    if (verificarInputs(nameInput)) {
+        nameInput.style.backgroundColor = 'red'
+    }
+    if (verificarInputs(descriptionInput)) {
+        descriptionInput.style.backgroundColor = 'red'
+    }
+}
 })
 
