@@ -1,9 +1,6 @@
 /*
-
 Given the same "house" object again
-
 Write the code for the functions as per the description above them
-
 */
 
 let kinningParkHouse = {
@@ -28,28 +25,28 @@ let parkAvenueHouse = {
 
 /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
-
   WRITE YOUR CODE BELOW
 */
 
 // returns the full name (first name + last name) of the owner of the house
 function getOwnerFullName(house) {
-  console.log(house.currentOwner.firstName)
-  return house.currentOwner.firstName
+  return `${house.currentOwner.firstName} ${house.currentOwner.lastName}`
 }
 
 // returns an array of the owners' email addresses of the two houses
 function getEmailAddresses(house1, house2) {
-  return house1.currentOwner.email+", "+house2.currentOwner.email
+  return `${house1.currentOwner.email} ${house2.currentOwner.email}`
 }
 
 // returns the address for the cheapest house out of the two
 function getCheapestAddress(house1, house2) {
-  if (house1.price>house2.price) {
-    return house2.address
-  } else {
-    return house1.address
-}}
+const precioCasa1 = house1.price
+const precioCasa2 = house2.price
+if (precioCasa1 < precioCasa2) {
+  return house1.address
+}
+return house2.address
+}
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
